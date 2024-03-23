@@ -4,6 +4,7 @@ const authenticateToken = require("./middleware/auth");
 const authRoutes = require("./routes/authRoutes");
 body_parser = require("body-parser");
 
+
 const app = express();
 app.use(express.static("public"));
 app.use(express.json());
