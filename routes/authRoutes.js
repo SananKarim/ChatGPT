@@ -5,6 +5,6 @@ const dataController = require("../controllers/dataController");
 const router = express.Router();
 
 router.post("/login", authController.login_post);
-router.get("/data", authController.data);
+router.post("/data", dataController.getAllUsers);
 
 module.exports = router;
