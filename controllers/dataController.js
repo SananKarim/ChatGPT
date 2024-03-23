@@ -1,4 +1,5 @@
 const db = require("../db/db.js");
+const User = require("../model/user.js");
 
 module.exports.getAllUsers = async (req, res) => {
   try {
@@ -7,10 +8,9 @@ module.exports.getAllUsers = async (req, res) => {
         .status(500)
         .json({ success: false, error: "Database connection failed" });
     }
-    
-    const usersCollection = db.collection("user");
+    const users = await User.find();
 
-    const users = await usersCollection.find().toArray();
+    return res.status(200).json({ success: true, data: users });
 
     return res.status(200).json({ success: true, data: users });
   } catch (error) {
