@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const MONGODB_URI =
-  "mongodb+srv://vercel-admin-user-65fec3f408f2a92ee20a382b:ZluLczPX9fCeh2Uy@cluster0.t9his3p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://vercel-admin-user-65fec3f408f2a92ee20a382b:ZluLczPX9fCeh2Uy@cluster0.t9his3p.mongodb.net/chatGPT?retryWrites=true&w=majority";
 mongoose
   .connect(MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
