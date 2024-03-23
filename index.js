@@ -12,7 +12,7 @@ app = express().use(body_parser.json());
 
 
 app.get("/healthpoint",  (req, res) => {
-  res.status(200).send("connected");
+  res.status(200).json("connected");
 });
 
 app.listen(3001 || 1337, () => {
