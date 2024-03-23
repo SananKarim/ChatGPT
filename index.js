@@ -1,6 +1,7 @@
 const express = require("express");
 const authenticateToken = require("./middleware/auth");
 const bodyParser = require("body-parser");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -19,9 +20,8 @@ app.listen(3001 || 1337, () => {
   console.log("Server started");
 });
 
-// app.get("/protected", authenticateToken, (req, res) => {
-//   res.status(200).send("Access granted");
-// });
+app.get("/protected", authenticateToken, (req, res) => {
+  res.status(200).send("Access granted");
+});
 
-// app.use(authRoutes);
-
+app.use(authRoutes);
