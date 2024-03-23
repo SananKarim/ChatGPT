@@ -20,8 +20,5 @@ app.listen(3001 || 1337, () => {
   console.log("Server started");
 });
 
-app.get("/protected", authenticateToken, (req, res) => {
-  res.status(200).send("Access granted");
-});
 
 app.use(authRoutes);

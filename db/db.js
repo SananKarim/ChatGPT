@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-// const MONGODB_URI =
-//   process.env.MONGODB_URI || "mongodb://0.0.0.0:27017/chatGPT";
+const MONGODB_URI =
+  "mongodb+srv://vercel-admin-user-65fec38b7dd1410a8e3f8952:4GDm3Ptk4THu1QJA@cluster0.t9his3p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
   .connect(MONGODB_URI)
