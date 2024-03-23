@@ -1,11 +1,14 @@
-const db = require("../db/db.js"); 
+const db = require("../db/db.js");
+
 module.exports.getAllUsers = async (req, res) => {
   try {
     if (!db.readyState) {
-      return res.status(500).json({ success: false, error: "Database connection failed" });
+      return res
+        .status(500)
+        .json({ success: false, error: "Database connection failed" });
     }
-
-    const usersCollection = db.collection('user'); 
+    
+    const usersCollection = db.collection("user");
 
     const users = await usersCollection.find().toArray();
 
@@ -16,7 +19,7 @@ module.exports.getAllUsers = async (req, res) => {
     return res.status(500).json({
       success: false,
       error: "Internal server error",
-      details: error.message, 
+      details: error.message,
     });
   }
 };
