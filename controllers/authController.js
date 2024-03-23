@@ -21,8 +21,8 @@ module.exports.login_post = async (req, res) => {
         .json({ success: false, error: "Invalid credentials" });
     }
 
-    const accessToken = jwt.sign({ email: user.email }, 'your_access_secret_key', { expiresIn: "2m" });
-    const refreshToken = jwt.sign({ email: user.email }, 'your_refresh_secret_key', { expiresIn: "10m" });
+    const accessToken = jwt.sign({ email: user.email }, 'testing', { expiresIn: "2m" });
+    const refreshToken = jwt.sign({ email: user.email }, 'testing', { expiresIn: "10m" });
     
     return res.status(200).json({ accessToken, refreshToken });
   } catch (error) {

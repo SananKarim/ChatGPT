@@ -11,6 +11,10 @@ app.use(express.json());
 app.listen(5001, () => {
   console.log("Server started");
 });
+app.get("/healthpoint",  (req, res) => {
+  res.status(200).send("connected");
+});
+
 
 app.get("/protected", authenticateToken, (req, res) => {
   res.status(200).send("Access granted");
